@@ -1,5 +1,6 @@
 # Import the required libraries
 import requests
+import sys
 from bs4 import BeautifulSoup
 from browser_automate import BrowserAutomate
 import json
@@ -32,7 +33,7 @@ def get_list_from_site(loaded_html, cityName):
     link_series.to_csv(f"data/property_links_{cityName}.csv", index=False)
 
 
-cityName = "Navi Mumbai"
+cityName = sys.argv[1]
 url = url_format(cityName)
 browser = BrowserAutomate(url)
 browser.scroll_page()

@@ -9,7 +9,7 @@ import logging
 class BrowserAutomate:
     def __init__(self, url):
         self.url = url
-        self.required_repetitions = 55  # extra scrolls so that nothing gets missed.
+        self.required_repetitions = 10  # extra scrolls so that nothing gets missed.
         self.setup_firefox()
 
     def setup_firefox(self):
@@ -30,7 +30,7 @@ class BrowserAutomate:
 
     # Function to simulate scrolling
     def scroll_page(self):
-        SCROLL_PAUSE_TIME = 10  # Pause time between scrolls
+        SCROLL_PAUSE_TIME = 5  # Pause time between scrolls
 
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
