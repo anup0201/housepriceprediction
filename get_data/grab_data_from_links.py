@@ -122,7 +122,7 @@ def getJson(url):
     )
     result = json.loads(result)
     list_of_dictionaries.append(result["propertyDetailInfoBeanData"]["propertyDetail"])
-    return result
+    return result["propertyDetailInfoBeanData"]["propertyDetail"]["detailBean"]
 
 
 def process_row(row):
@@ -153,17 +153,3 @@ print(final_df)
 final_df.to_csv("data/property_details.csv")
 print(len(list_of_dictionaries))
 print(len(list_of_errored_liks))
-
-
-def function_a(msg):
-    message = msg
-
-    def function_b():
-        print(msg)
-        return function_b, msg + " return from function_a"
-
-
-a, b = function_a("hello world")
-print(a)
-a()
-print(b)
